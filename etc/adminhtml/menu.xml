@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mss_Connector::advanced"
+        	 title="Magento Mobile Shop"
+        	 module="Mss_Connector"
+        	 sortOrder="10" 
+        	 resource="Mss_Connector::advanced"
+		/>
+        
+		<add id="Mss_Connector::advanced_connector"
+			 title="Configuration" 
+			 module="Mss_Connector" 
+			 sortOrder="11"  
+			 parent="Mss_Connector::advanced" 
+			 resource="Mss_Connector::advanced_connector"
+		/>
+
+		<add id="Mss_Connector::connector_configuration" 
+			 title="Manage Configuration" 
+			 module="Mss_Connector" 
+			 sortOrder="12"  
+			 parent="Mss_Connector::advanced_connector" 
+			 action="adminhtml/system_config/edit/section/configuration"	
+			 resource="Mss_Connector::connector_configuration"
+		/>
+
+		<add id="Mss_Connector::third_level_eample" 
+			 title="Manage Dashboard" 
+			 module="Mss_Connector" 
+			 sortOrder="14"  
+			 resource="Magento_Backend::content"			 
+			 parent="Mss_Connector::advanced_connector" 
+			 action="mss_connector/dashboard"
+		/>
+
+    </menu>
+</config>
+
